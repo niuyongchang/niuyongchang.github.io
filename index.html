@@ -1,10 +1,115 @@
-<html>
-<body>
-<h1>cao ni ma</h1>
-<h2>3234234</h2>
-<p>hahaha</p>
-<a href="http://www.baidu.com">Baidu</a>
-<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3754411196,2279805935&fm=58" width="100" height="100">
-<p>hahaha</p>
+<!-- HTML的属性 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的技术博客</title>
+	<link rel="stylesheet" type="text/css" href="./wednesday.css">
+	<style type="text/css">
+		h1{
+			color: gray;
+			clear: left;
+		}
+
+		tr{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body style="text-align: left;">	<!-- bgcolor属性 -->
+	<p>This is a paragraph</p>
+	<a href="http://www.wuwangkeji.com" target="_blank">This is a link</a>
+	<h1 align="center">一个居中的head</h1><hr>	<!-- align属性 -->
+	<table border="1"></table>					<!-- border属性 -->
+	<input type="button" name="button">This is a button
+
+	<pre>
+		这种格式
+		可以保留
+		代码中的  格式
+	</pre>
+	<p>pre格式很适合显示计算机代码：</p>
+	<pre>
+	for i = 1 to 10
+		print i
+	next i
+	</pre>
+
+	<code>computer code</code>
+	<abbr title="全称为。。。">简写</abbr>
+
+
+	<p>以下内容引用自 WWF 的网站：</p>
+	<blockquote cite="http://www.worldwildlife.org/who/index.html">
+	五十年来，WWF 一直致力于保护自然界的未来。
+	世界领先的环保组织，WWF 工作于 100 个国家，
+	并得到美国一百二十万会员及全球近五百万会员的支持。
+	</blockquote>
+
+	<p>下面是个table表格</p>
+	<table border="1" frame="vsides">						<!-- 可用属性： -->
+	<tr>
+		<th>Heading</th>
+		<th>AnotherHeading</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>value1</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>&nbsp;</td>						<!-- &nbsp; 是个占位符：no-breaking 空格 -->
+	</tr>
+	<caption>表格 1</caption>
+	</table>
+	
+	<p>接下来是列表,ul表示无序列表，ol表示有序</p>
+	<ul>
+		<li>milk</li>
+		<li>juice</li>
+		<li>cola</li>
+	</ul>
+
+	<ol start="50">
+		<li>milk</li>
+		<li>juice</li>
+		<li>cola</li>
+	</ol>
+	
+	<div id="header">
+		<h1 align="center">City Gallery</h1>
+	</div>
+	<div id="nav">
+		London<br>
+		Paris<br>
+		Tokyo
+	</div>
+	<div id="section">
+		<h1>London</h1>
+		<p>
+		London is the capital city of England. It is the most populous city in the United Kingdom,
+with a metropolitan area of over 13 million inhabitants.
+		</p>
+	</div>
+
+	<!-- 响应式Web设计 Bootstrap -->
+
+	<h1>HTML Demo</h1>
+	<h2>Resize this responsive page!</h2>
+	<br>
+
+	<div class="city">
+		<h2>London</h2>
+		<p>It is the most populous city in the United Kingdom,
+with a metropolitan area of over 13 million inhabitants.</p>
+	</div>
+
+	<div class="city">
+		<a href="./helloworld.html"><h2>Paris</h2></a>
+		<p>Paris is the capital and most populous city of France.</p>
+	</div>
+
 </body>
 </html>
+
