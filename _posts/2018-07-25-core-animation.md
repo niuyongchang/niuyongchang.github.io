@@ -17,14 +17,14 @@ title: animation
 * 虚拟属性。`CALayer.transform`有三个虚拟属性：`rotation` `position` `scale`。假如只需要旋转动画，可以使用`[CABasicAnimation animationWithKeyPath:@"transform.rotation"]`，`toValue`设置角度即可。如果直接修改`transform`整体，会影响其他的值。`position` 和 `scale`的值无法直接使用。
 * `CAAnimationGroup`将不同的动画实例同时执行，如果动画实例定义了`duration`则该动画以此为准，未定义的使用group的`duration`
 * `CATransition`是应用于图层整体的效果，也可以应用于单个属性，比如设置`layer.actions = @{@"propertyKey": transition}`。应用于整体时，需要将transition添加到对应`view.layer`上。例如：  
-```  
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-	￼//set up crossfade transition
-	CATransition *transition = [CATransition animation];
-	transition.type = kCATransitionFade;
-	//apply transition to tab bar controller's view
-	[tabBarController.view.layer addAnimation:transition forKey:nil];
-}
-```  
+	```  
+	- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+	{
+		￼//set up crossfade transition
+		CATransition *transition = [CATransition animation];
+		transition.type = kCATransitionFade;
+		//apply transition to tab bar controller's view
+		[tabBarController.view.layer addAnimation:transition forKey:nil];
+	}
+	```  
 此外，`UIView`的类方法也有对应的transition动画
