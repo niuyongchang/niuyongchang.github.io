@@ -8,5 +8,7 @@
 #### 显式动画
 * `CAAnimation`动画在执行完后，会自动回复到原始状态。这是由于在添加animation之前， `modelLayer` 控制 `presentationLayer` 去显示，而添加了animation之后，控制权交给了animation，`toValue` 只是提供给动画的一个目标值，并没有改变 `modelLayer` 的值，在动画结束后，animation交还控制权给 `modelLayer`，而 `modelLayer` 的状态仍保持在动画开始前的时刻，所以此时就会控制 `presentationLayer` 重新回到起点。通过代理方法 `animationDidStop` 中使用CATransaction禁用actions以及设置对应key的目标value来达成最终状态。也可以设置 **`animation.fillMode`**, **`animation.removeOnCompletion`** 来实现。
 * `CAKeyFrameAnimation` 可以通过 `rotationMode` 来控制运动方向沿着切线
-* `CASpringAnimation` 弹簧动画，各个属性如下：
-  `mass` : 到达目标点后的形变幅度
+* `CASpringAnimation` 弹簧动画，各个属性如下：  
+    `mass` : 首次到达目标点后的摆动幅度  
+    `damping` : 阻尼值。阻尼越大，可摆动次数越少  
+    `stiffness` : 类似于弹簧的松紧度。值越小(弹簧越松)，摆动速度越小；反之，值越大，摆动速度越大
