@@ -28,3 +28,35 @@ title: animation
 }  
 {% endhighlight %}  
 此外，`UIView`的类方法也有对应的transition动画
+#### 动画时间
+* `CAMediaTiming`协议是`CALayer`、`CAAnimation`都遵循的协议。协议定义了如下属性：  
+`beginTime` ：动画执行前的延迟时间，默认为0，立即开始  
+`timeOffset` ：快进动画，从该时刻开始执行动画，忽略0到timeOffset之间的动画过程。结合`speed = 0`，可用来指定动画的状态  
+`speed` ：速度。假如`duration = 10, speed = 2`，那么动画将会加速执行，在**5s**时执行结束  
+`repeatCount` ：重复次数。使用`INFINITY`来设置无限重复
+`repeatDuration` ： 重复时间。可能与`repeatCount`相互冲突
+`autoReverses` ：动画结束后，是否会自动反向播放动画
+`fillMode` ：定义了动画结束后的行为。可用值包括：  
+	* `kCAFillModeForwards` : 保持最终状态  
+	* `kCAFillModeBackwards` : 结束后返回初始状态。另一个作用是，如果animation有`fromValue`，假如延迟**3s**开始动画，那么当动画加入layer后，会先变为`fromValue`的状态，然后**等待3s**后向`toValue`执行动画  
+	* `kCAFillModeBoth` : 结合前两者的行为  
+	* `kCAFillModeRemoved` : 默认值
+* `speed`、`timeOffset`、`beginTime`作用在图层上时可用于动画的暂停和重启
+#### 动画速度(缓冲函数)
+* `CAMediaTimingFunction`缓冲函数类控制动画的速度变化。默认值是`kCAMediaTimingFunctionLinear`。`UIView`动画中的`option`默认值则是`UIViewAnimationOptionCurveEaseInOut`
+* 自定以缓冲函数通过提交两个控制点，构成一个三次贝塞尔曲线函数
+* 将连续动画时间以每秒60帧拆分，保持**初始值**和**终值**不变，根据**time**，对每一个单元计算中间值。如果time等差递增，那么结果就是匀速运动。使用函数处理**time**则会影响动画的行为  
+{% highlight javascript %}
+//弹性球自由落体的时间处理缓冲函数
+float bounceEaseOut(float t)
+{
+  if (t < 4/11.0) {
+    return (121 * t * t)/16.0;
+  } else if (t < 8/11.0) {
+      return (363/40.0 * t * t) - (99/10.0 * t) + 17/5.0;
+  } else if (t < 9/10.0) {
+      return (4356/361.0 * t * t) - (35442/1805.0 * t) + 16061/1805.0;
+  }
+  return (54/5.0 * t * t) - (513/25.0 * t) + 268/25.0;
+}
+{% endhighlight %}
