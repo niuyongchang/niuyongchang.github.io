@@ -47,7 +47,7 @@ title: animation
 #### 动画速度(缓冲函数)
 * `CAMediaTimingFunction`缓冲函数类控制动画的速度变化。默认值是`kCAMediaTimingFunctionLinear`。`UIView`动画中的`option`默认值则是`UIViewAnimationOptionCurveEaseInOut`
 * 自定以缓冲函数通过提交两个控制点，构成一个三次贝塞尔曲线函数
-* 将连续动画时间以每秒60帧拆分，保持**初始值**和**终值**不变，根据**time**，对每一个单元计算中间值。如果time等差递增，那么结果就是匀速运动。使用函数处理**time**则会影响动画的行为  
+* 将连续动画时间以每秒60帧拆分，保持**初始值**和**终值**不变，根据**time**，对每一个单元计算中间值。如果**time**等差递增，那么结果就是匀速运动。使用函数处理**time**则会影响动画的行为  
 {% highlight javascript %}
 //弹性球自由落体的时间处理缓冲函数
 float bounceEaseOut(float t)
