@@ -26,6 +26,5 @@ title: animation
   //apply transition to tab bar controller's view  
   [tabBarController.view.layer addAnimation:transition forKey:nil];  
 }  
-{% endhighlight %}
-
+{% endhighlight %}  
 此外，`UIView`的类方法也有对应的transition动画
