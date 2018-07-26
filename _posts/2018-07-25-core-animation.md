@@ -30,13 +30,13 @@ title: animation
 此外，`UIView`的类方法也有对应的transition动画
 #### 动画时间
 * `CAMediaTiming`协议是`CALayer`、`CAAnimation`都遵循的协议。协议定义了如下属性：  
-`beginTime` ：动画执行前的延迟时间，默认为0，立即开始  
-`timeOffset` ：快进动画，从该时刻开始执行动画，忽略0到timeOffset之间的动画过程。结合`speed = 0`，可用来指定动画的状态  
-`speed` ：速度。假如`duration = 10, speed = 2`，那么动画将会加速执行，在**5s**时执行结束  
-`repeatCount` ：重复次数。使用`INFINITY`来设置无限重复
-`repeatDuration` ： 重复时间。可能与`repeatCount`相互冲突
-`autoReverses` ：动画结束后，是否会自动反向播放动画
-`fillMode` ：定义了动画结束后的行为。可用值包括：  
+  `beginTime` ：动画执行前的延迟时间，默认为0，立即开始  
+  `timeOffset` ：快进动画，从该时刻开始执行动画，忽略0到timeOffset之间的动画过程。结合`speed = 0`，可用来指定动画的状态  
+  `speed` ：速度。假如`duration = 10, speed = 2`，那么动画将会加速执行，在**5s**时执行结束  
+  `repeatCount` ：重复次数。使用`INFINITY`来设置无限重复
+  `repeatDuration` ： 重复时间。可能与`repeatCount`相互冲突
+  `autoReverses` ：动画结束后，是否会自动反向播放动画
+  `fillMode` ：定义了动画结束后的行为。可用值包括：  
 	* `kCAFillModeForwards` : 保持最终状态  
 	* `kCAFillModeBackwards` : 结束后返回初始状态。另一个作用是，如果animation有`fromValue`，假如延迟**3s**开始动画，那么当动画加入layer后，会先变为`fromValue`的状态，然后**等待3s**后向`toValue`执行动画  
 	* `kCAFillModeBoth` : 结合前两者的行为  
