@@ -36,10 +36,10 @@ title: animation
   `repeatCount` ：重复次数。使用`INFINITY`来设置无限重复
   `repeatDuration` ： 重复时间。可能与`repeatCount`相互冲突
   `autoReverses` ：动画结束后，是否会自动反向播放动画
-  `fillMode` ：定义了动画结束后的行为。可用值包括：  
-	* `kCAFillModeForwards` : 保持最终状态  
-	* `kCAFillModeBackwards` : 结束后返回初始状态。另一个作用是，如果animation有`fromValue`，假如延迟**3s**开始动画，那么当动画加入layer后，会先变为`fromValue`的状态，然后**等待3s**后向`toValue`执行动画  
-	* `kCAFillModeBoth` : 结合前两者的行为  
+  `fillMode` ：定义了动画结束后的行为。可用值包括：
+	* `kCAFillModeForwards` : 保持最终状态
+	* `kCAFillModeBackwards` : 结束后返回初始状态。另一个作用是，如果animation有`fromValue`，假如延迟**3s**开始动画，那么当动画加入layer后，会先变为`fromValue`的状态，然后**等待3s**后向`toValue`执行动画
+	* `kCAFillModeBoth` : 结合前两者的行为
 	* `kCAFillModeRemoved` : 默认值
 * `speed`、`timeOffset`、`beginTime`作用在图层上时可用于动画的暂停和重启
 #### 动画速度(缓冲函数)
