@@ -28,6 +28,7 @@ title: animation
 }  
 {% endhighlight %}  
 此外，`UIView`的类方法也有对应的transition动画
+
 #### 动画时间
 * `CAMediaTiming`协议是`CALayer`、`CAAnimation`都遵循的协议。协议定义了如下属性：  
   `beginTime` ：动画执行前的延迟时间，默认为0，立即开始  
@@ -42,6 +43,7 @@ title: animation
 	* `kCAFillModeBoth` : 结合前两者的行为
 	* `kCAFillModeRemoved` : 默认值
 * `speed`、`timeOffset`、`beginTime`作用在图层上时可用于动画的暂停和重启
+
 #### 动画速度(缓冲函数)
 * `CAMediaTimingFunction`缓冲函数类控制动画的速度变化。默认值是`kCAMediaTimingFunctionLinear`。`UIView`动画中的`option`默认值则是`UIViewAnimationOptionCurveEaseInOut`
 * 自定以缓冲函数通过提交两个控制点，构成一个三次贝塞尔曲线函数
