@@ -8,4 +8,4 @@
   * 过渡
   * 动画取消
 
-## [最新Reveal查看任意App的使用](/_posts/2018-07-31-Reveal.md) 
+## [最新Reveal查看任意App的使用](/_posts/2018-07-31-reveal.md) 
