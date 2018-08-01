@@ -17,7 +17,7 @@ title: animation
 * 虚拟属性。`CALayer.transform`有三个虚拟属性：`rotation` `position` `scale`。假如只需要旋转动画，可以使用`[CABasicAnimation animationWithKeyPath:@"transform.rotation"]`，`toValue`设置角度即可。如果直接修改`transform`整体，会影响其他的值。`position` 和 `scale`的值无法直接使用。
 * `CAAnimationGroup`将不同的动画实例同时执行，如果动画实例定义了`duration`则该动画以此为准，未定义的使用group的`duration`
 * `CATransition`是应用于图层整体的效果，也可以应用于单个属性，比如设置`layer.actions = @{@"propertyKey": transition}`。应用于整体时，需要将transition添加到对应`view.layer`上。例如：  
-{% highlight javascript %}
+```
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController  
 {  
 ￼//set up crossfade transition  
@@ -26,7 +26,7 @@ transition.type = kCATransitionFade;
 //apply transition to tab bar controller's view  
 [tabBarController.view.layer addAnimation:transition forKey:nil];  
 }  
-{% endhighlight %}  
+```
 此外，`UIView`的类方法也有对应的transition动画
 
 #### 动画时间
@@ -48,7 +48,7 @@ transition.type = kCATransitionFade;
 * `CAMediaTimingFunction`缓冲函数类控制动画的速度变化。默认值是`kCAMediaTimingFunctionLinear`。`UIView`动画中的`option`默认值则是`UIViewAnimationOptionCurveEaseInOut`
 * 自定以缓冲函数通过提交两个控制点，构成一个三次贝塞尔曲线函数
 * 将连续动画时间以每秒60帧拆分，保持**初始值**和**终值**不变，根据**time**，对每一个单元计算中间值。如果**time**等差递增，那么结果就是匀速运动。使用函数处理**time**则会影响动画的行为  
-{% highlight javascript %}
+```
 //弹性球自由落体的时间处理缓冲函数
 float bounceEaseOut(float t)
 {
@@ -61,4 +61,4 @@ return (4356/361.0 * t * t) - (35442/1805.0 * t) + 16061/1805.0;
 }
 return (54/5.0 * t * t) - (513/25.0 * t) + 268/25.0;
 }
-{% endhighlight %}
+```
